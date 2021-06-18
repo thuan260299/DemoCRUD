@@ -10,16 +10,9 @@ namespace CrudMvc.Controllers
 {
     public class UserController : Controller
     {
-        CRUBEntities db = new CRUBEntities();
+         private CRUBEntities db = new CRUBEntities();
         // GET: User
-        //public ActionResult Index()
-        //{
-        //    using (CRUBEntities db = new CRUBEntities())
-        //    {
-        //        return View(db.User.ToList());
-        //    }
-
-        //}
+        
 
         public ActionResult Index(string searchString)
         {
@@ -30,8 +23,7 @@ namespace CrudMvc.Controllers
                     return View(db.User.Where(x => x.Ten.Contains(searchString) || searchString == null).ToList());
             
             }
-
-         
+                     
         }
 
 
